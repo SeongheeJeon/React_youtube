@@ -12,14 +12,17 @@ function App({ youtube }) {
     setSelectedVideo(video);
   };
 
-  const search = useCallback((query) => {
-    youtube //
-      .search(query) //
-      .then((videos) => {
-        setVideos(videos);
-        setSelectedVideo(null);
-      });
-  }, []);
+  const search = useCallback(
+    (query) => {
+      youtube //
+        .search(query) //
+        .then((videos) => {
+          setVideos(videos);
+          setSelectedVideo(null);
+        });
+    },
+    [youtube]
+  );
 
   useEffect(() => {
     youtube //
